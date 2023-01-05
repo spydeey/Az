@@ -453,52 +453,50 @@
     <br><br><br><br><br><br><br><br>
     
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="circle-progress.js"></script>
-    <script>
-        $(document).ready(function(){
-            $(".sidemenu-toggler").click(function(){
-           $(".sidemenu").addClass("active");       
-            });
-            $(".close").click(function(){
-                $(".sidemenu").removeClass("active");
-            });
-            
-        $(window).scroll(function(){
-            var sc = $(window).scrollTop();
-            if (sc > 150){
-                $(".header").addClass("sticky");
-            }else{
-                $(".header").removeClass("sticky");
-            }
-        });
-        
-        $(window).on("load", function(){
-            var $container = $('.portfolioContainer');
-            $container.isotope({
-                filter: '*',
-                animationOptions: {
-                    queue: true
-                }
-            });
-            });
-            
-            $('.portfolio-nav li').click(function(){
-                $('.portfolio-nav .current').removeClass('current');
-                $(this).addClass('current');
-                var selector = $(this).attr('data-filter');
-                $container.isotop({
-                    filter: selector,
-                    animationOptions: {
-                        queue: true
-                    }
-                });
-                return false;
-            });
-            $('#portfolio-item').mixltUp();
-        
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="circle-progress.js"></script>
+<script>
+  $(document).ready(function() {
+    $(".sidemenu-toggler").click(function() {
+      $(".sidemenu").addClass("active");
+    });
+    $(".close").click(function() {
+      $(".sidemenu").removeClass("active");
+    });
+
+    $(window).scroll(function() {
+      var sc = $(window).scrollTop();
+      if (sc > 150) {
+        $(".header").addClass("sticky");
+      } else {
+        $(".header").removeClass("sticky");
+      }
+    });
+
+    $(window).on("load", function() {
+      var $container = $(".portfolioContainer");
+      $container.isotope({
+        filter: "*",
+        animationOptions: {
+          queue: true
+        }
+      });
+    });
+
+    $(".portfolio-nav li").click(function() {
+      $(".portfolio-nav .current").removeClass("current");
+      $(this).addClass("current");
+      var selector = $(this).attr("data-filter");
+      $container.isotope({
+        filter: selector,
+        animationOptions: {
+          queue: true
+        }
+      });
+      return false;
+    });
+  });
+</script>
 </body>
 
 </html>
